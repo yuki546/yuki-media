@@ -21,11 +21,14 @@ const LoadMoreButton = ({ initialCount, totalCount }: LoadMoreButtonProps) => {
 
   const loadMore = async () => {
     setLoading(true);
-    const { data } = await getAllArticles(currentCount, MAX_DISPLAY_ARTICLE);
-    console.log(currentCount);
-    console.log(data);
-    setArticles((prev) => [...prev, ...data.contents]);
-    setCurrentCount((prev) => prev + data.contents.length);
+    const { articles } = await getAllArticles(
+      currentCount,
+      MAX_DISPLAY_ARTICLE
+    );
+    // console.log(currentCount);
+    // console.log(articles);
+    setArticles((prev) => [...prev, ...articles]);
+    setCurrentCount((prev) => prev + articles.length);
     setRemainArticleCount((prev) => prev - currentCount);
     setLoading(false);
   };
@@ -34,7 +37,7 @@ const LoadMoreButton = ({ initialCount, totalCount }: LoadMoreButtonProps) => {
 
   return (
     <div className="mt-4">
-      <div className="grid lg:grid-cols-3 md:grid-2 grid-cols-1 gap-y-10 gap-x-4 mt-10">
+      <div className="grid lg:grid-cols-3 md:grid-2 grid-cols-1 gap-y-10 gap-x-10 mt-10">
         {articles.map((article) => (
           <ArticleCard key={article.id} article={article} />
         ))}

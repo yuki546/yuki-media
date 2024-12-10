@@ -6,25 +6,16 @@ const Header = () => {
     <header className="container mx-auto py-6 px-2">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="font-semibold sm:text-xl">Yuki Media</h1>
+          <Link href={"/"} className="font-semibold sm:text-xl">
+            Yuki Media
+          </Link>
         </div>
 
         <nav className="hidden md:block">
           <ul className="flex gap-4">
             <li>
-              <Link
-                href={"/posts"}
-                className="hover:underline underline-offset-2"
-              >
-                Posts
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={"/category"}
-                className="hover:underline underline-offset-2"
-              >
-                Category
+              <Link href={"/"} className="hover:underline underline-offset-2">
+                記事一覧
               </Link>
             </li>
             <li>
@@ -32,7 +23,7 @@ const Header = () => {
                 href={"/tags"}
                 className="hover:underline underline-offset-2"
               >
-                Tags
+                タグ
               </Link>
             </li>
           </ul>

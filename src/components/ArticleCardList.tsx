@@ -9,7 +9,7 @@ type ArticleCardListProps = {
 const ArticleCardList = ({ articles }: ArticleCardListProps) => {
   return (
     <div className="py-10">
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-y-10 gap-x-4">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-y-10 gap-x-10">
         {articles.map((article) => (
           <ArticleCard key={article.id} article={article} />
         ))}
